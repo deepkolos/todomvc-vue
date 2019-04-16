@@ -29,7 +29,7 @@
       </div>
       <test-slot-el class="test-slot-el" slot="after" />
 
-      <template slot-scope="item" v-if="showTpl">
+      <template slot-scope="item" v-if="item.showTpl">
         <text>template文字 {{item.propA}}</text>
         <test-slot-el class="test-slot-el" :value="getValue()" />
         <test-slot-el class="test-slot-el" :value="value" />
