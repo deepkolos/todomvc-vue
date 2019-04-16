@@ -26,7 +26,7 @@ export default {
       disabled: true
     }
   },
-  props: ['todos', 'all-done'],
+  props: ['todos', 'allDone'],
   mounted() {
     this.inputDom = this.$refs.input
   },
@@ -45,7 +45,7 @@ export default {
       if (!value) {
         return
       }
-      this.$emit('add-todo', { value })
+      this.$emit('addTodo', { value })
       this.newTodo = ''
     },
     /**
@@ -94,7 +94,7 @@ export default {
 
   .app-header .new-todo .input-text {
     flex-grow: 1;
-    padding: 0 30px; 
+    padding: 0 30px;
   }
 
   .app-header .new-todo .btn-add {

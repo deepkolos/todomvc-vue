@@ -6,14 +6,16 @@
   },
   "description": "",
   "scripts": {
+    "server": "hap server --watch --include-dsl-from-lib",
+    "watch": "hap watch",
     "build": "hap build",
-    "release": "hap release",
-    "server": "hap server",
-    "watch": "hap watch"
+    "release": "hap release"
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.3.4",
-    "hap-toolkit": "^0.4.1",
-    "quickapp-dsls": "^0.1.1"
+    "bezier-easing": "^2.1.0",
+    "hap-toolkit": "^0.4.2",
+    "quickapp-dsls": "^0.1.1",
+    "vue-swipe-directive": "^0.1.10"
   }
 }

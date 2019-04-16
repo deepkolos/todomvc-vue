@@ -11,9 +11,7 @@
     { "name": "system.shortcut" },
     { "name": "system.storage" }
   ],
-  "permissions": [
-    { "origin": "*" }
-  ],
+  "permissions": [{ "origin": "*" }],
   "config": {
     "logLevel": "log",
     "dsl": {
@@ -21,9 +19,30 @@
     }
   },
   "router": {
-    "entry": "index",
+    "entry": "pages/test",
     "pages": {
       "index": {
+        "component": "index"
+      },
+      "pages/test": {
+        "component": "index"
+      },
+      "pages/slot": {
+        "component": "index"
+      },
+      "pages/event": {
+        "component": "index"
+      },
+      "pages/class": {
+        "component": "index"
+      },
+      "pages/directive": {
+        "component": "index"
+      },
+      "pages/page": {
+        "component": "index"
+      },
+      "pages/animation": {
         "component": "index"
       }
     }

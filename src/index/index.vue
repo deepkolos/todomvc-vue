@@ -1,27 +1,27 @@
 <template>
-    <div class="todoapp">
-      <app-header
-        @add-todo="addTodo($event)"
-        :todos="todos"
-        :all-done="allDone"
-        @all-done-change="changeAllDone($event)">
-      </app-header>
-      <select-box
-        @change-radio="changeRadio($event)"
-        :cate="cateList">
-      </select-box>
-      <list-info
-        :todos="todos"
-        :remaining="remaining"
-        @remove-completed="removeCompleted($event)"
-      ></list-info>
-      <page-list
-        :list="filteredTodos"
-        @delete-todo="removeTodo($event)"
-        @modify-finish="editTodo($event)"
-        @modify-status="changeTodoStatus($event)">
-      </page-list>
-    </div>
+  <div class="todoapp">
+    <app-header
+      @addTodo="addTodo($event)"
+      :todos="todos"
+      :allDone="allDone"
+      @all-done-change="changeAllDone($event)">
+    </app-header>
+    <select-box
+      @change-radio="changeRadio($event)"
+      :cate="cateList">
+    </select-box>
+    <list-info
+      :todos="todos"
+      :remaining="remaining"
+      @remove-completed="removeCompleted($event)"
+    ></list-info>
+    <page-list
+      :list="filteredTodos"
+      @delete-todo="removeTodo($event)"
+      @modify-finish="editTodo($event)"
+      @modify-status="changeTodoStatus($event)">
+    </page-list>
+  </div>
 </template>
 <style>
   @import '../common/css/common.css';
@@ -153,4 +153,3 @@ export default {
   }
 }
 </script>
-
