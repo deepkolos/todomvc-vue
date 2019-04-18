@@ -38,7 +38,7 @@
 
     <text>animation</text>
     <input class="btn-start" type="button" value="start" @click="startAnimate">
-    <div class="block" :class="{animated}"></div>
+    <div ref="block" class="block" :class="{animated}"></div>
   </div>
 </template>
 
@@ -73,7 +73,33 @@ export default {
     },
 
     startAnimate() {
-      this.animated = true;
+      // this.animated = true;
+      var $block = this.$refs.block;
+
+      var handler = $block
+        .animate(
+          [
+            {
+              transform: "translateX(0px)",
+              time: 0
+            },
+            {
+              transform: "translateX(550px)",
+              time: 100
+            }
+          ],
+          {
+            duration: 1000,
+            easing: "ease",
+            delay: 0,
+            fill: "forwards",
+            iterations: 1,
+            needLayout: false
+          }
+        )
+        .play();
+
+      console.log("TCL: startAnimate -> animate", handler);
     }
   }
 };

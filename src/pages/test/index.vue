@@ -24,7 +24,8 @@ export default {
         ["Event 测试", "/pages/event"],
         ["Class 测试", "/pages/class"],
         ["Directive 测试", "/pages/directive"],
-        ["Animation 测试", "/pages/animation"]
+        ["Animation 测试", "/pages/animation"],
+        ["Component 测试", "/pages/component"]
       ]
     };
   },

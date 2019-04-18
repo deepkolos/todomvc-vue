@@ -44,6 +44,9 @@
       },
       "pages/animation": {
         "component": "index"
+      },
+      "pages/component": {
+        "component": "index"
       }
     }
   },

@@ -97,6 +97,26 @@ export default {
       this.x = restrictRange(this.x, this.minPointX, this.maxPointX);
       this.y = restrictRange(this.y, this.minPointY, this.maxPointY);
       this.transform = tran(this.x, this.y);
+      // this.$refs.point
+      //   .animate(
+      //     [
+      //       {
+      //         transform: `translateX(${this.x}px) translateY(${this.y}px)`,
+      //         time: 0
+      //       },
+      //       {
+      //         transform: `translateX(${this.x}px) translateY(${this.y}px)`,
+      //         time: 100
+      //       }
+      //     ],
+      //     {
+      //       delay: 0,
+      //       duration: 0,
+      //       easing: "linear",
+      //       fill: "forwards",
+      //     }
+      //   )
+      //   .play();
     },
     onTouchEnd(e) {
       const pX = this.tracker.predictX(parseFloat(this.deceleration));
@@ -109,9 +129,30 @@ export default {
       this.x += detaX;
       this.y += detaY;
       this.flingT = Math.max(pX.t, pY.t);
-      animate({ x, y }, { x: this.x, y: this.y }, this.flingT, ({ x, y }) => {
-        this.transform = tran(x, y);
-      });
+      // animate({ x, y }, { x: this.x, y: this.y }, this.flingT, ({ x, y }) => {
+      //   this.transform = tran(x, y);
+      // });
+
+      this.$refs.point
+        .animate(
+          [
+            {
+              transform: `translateX(${x}px) translateY(${y}px)`,
+              time: 0
+            },
+            {
+              transform: `translateX(${this.x}px) translateY(${this.y}px)`,
+              time: 100
+            }
+          ],
+          {
+            duration: this.flingT,
+            easing: "cubic-bezier(0.23, 1, 0.32, 1)",
+            delay: 0,
+            fill: "forwards",
+          }
+        )
+        .play();
     }
   }
 };

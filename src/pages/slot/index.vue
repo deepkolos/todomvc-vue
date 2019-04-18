@@ -59,7 +59,7 @@ export default {
       testSlotProps: {
         propA: "string",
         propB: 1,
-        showTpl: false
+        showTpl: true
       },
       root: {
         value: "根节点",
