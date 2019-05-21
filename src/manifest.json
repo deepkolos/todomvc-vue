@@ -9,7 +9,9 @@
     { "name": "system.prompt" },
     { "name": "system.router" },
     { "name": "system.shortcut" },
-    { "name": "system.storage" }
+    { "name": "system.storage" },
+    { "name": "system.alarm" },
+    { "name": "system.prompt" }
   ],
   "permissions": [{ "origin": "*" }],
   "config": {
@@ -46,6 +48,15 @@
         "component": "index"
       },
       "pages/component": {
+        "component": "index"
+      },
+      "pages/vuex": {
+        "component": "index"
+      },
+      "pages/alarm": {
+        "component": "index"
+      },
+      "pages/list": {
         "component": "index"
       }
     }

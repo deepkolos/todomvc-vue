@@ -9,7 +9,9 @@
 
 <template>
   <div class="test-page">
-    <a v-for="([label, link], index) in links" :key="index" :href="link">{{ label }}</a>
+    <a v-for="([label, link], index) in links" :key="index" :href="link">{{
+      label
+    }}</a>
   </div>
 </template>
 
@@ -21,16 +23,24 @@ export default {
         ["Todos 测试", "/index"],
         ["Slot 测试", "/pages/slot"],
         ["Page 测试", "/pages/page"],
+        ["Vuex 测试", "/pages/vuex"],
         ["Event 测试", "/pages/event"],
         ["Class 测试", "/pages/class"],
         ["Directive 测试", "/pages/directive"],
         ["Animation 测试", "/pages/animation"],
-        ["Component 测试", "/pages/component"]
+        ["Component 测试", "/pages/component"],
+        ["Alarm 测试", "/pages/alarm"],
+        ["List 测试", "/pages/list"]
       ]
     };
   },
-  async created() {
+  created() {
     console.log("TCL: created -> created");
+  },
+  computed: {
+    keyword() {
+      return this.$store.state.keyword;
+    }
   },
   mounted() {
     this.$page.setTitleBar({

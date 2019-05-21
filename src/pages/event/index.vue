@@ -46,7 +46,6 @@
 <script>
 import { animate } from "../../utils/dom";
 import VelocityTracker from "../../libs/velocity-tracker";
-import { setTimeout, clearTimeout } from "timers";
 
 const tran = (x, y) => `translateX(${x}px) translateY(${y}px)`;
 const restrictRange = (x, min, max) => (x > max ? max : x < min ? min : x);

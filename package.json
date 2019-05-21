@@ -16,6 +16,10 @@
     "bezier-easing": "^2.1.0",
     "hap-toolkit": "^0.4.2",
     "quickapp-dsls": "^0.1.1",
-    "vue-swipe-directive": "^0.1.10"
+    "vue-swipe-directive": "^0.1.10",
+    "vuex": "^3.1.0"
+  },
+  "dependencies": {
+    "vue": "^2.6.10"
   }
 }

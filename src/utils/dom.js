@@ -36,7 +36,7 @@ export const animate = (
 
     if (now >= destTime || !duration) {
       status.isAnimating = false;
-      clearTimeout(status.animateTimer);
+      cancelAnimationFrame(status.animateTimer);
       translate(dst);
       doneCB instanceof Function && doneCB();
       return;
@@ -50,7 +50,7 @@ export const animate = (
     translate(curr);
 
     if (status.isAnimating) {
-      status.animateTimer = setTimeout(step, 8);
+      status.animateTimer = requestAnimationFrame(step);
     }
   };
 
