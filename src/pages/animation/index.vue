@@ -11,19 +11,37 @@
   padding: 15px;
 }
 
-.animated {
-  animation-name: translate;
+.animated-x {
+  animation-name: translateX;
+  animation-delay: 1s;
   animation-duration: 1s;
   animation-fill-mode: forwards;
-  animation-timing-function: ease;
+  transform: translateX(200%);
 }
 
-@keyframes translate {
+.animated-x-px {
+  animation-name: translateXPX;
+  animation-delay: 1s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  transform: translateX(200px);
+}
+
+@keyframes translateX {
   0% {
-    transform: translateX(0px);
+    transform: translateX(200%);
   }
   100% {
-    transform: translateX(550px);
+    transform: translateX(0%);
+  }
+}
+
+@keyframes translateXPX {
+  0% {
+    transform: translateX(200px);
+  }
+  100% {
+    transform: translateX(0%);
   }
 }
 </style>
@@ -31,14 +49,33 @@
 <template>
   <div style="flex-direction: column; width: 100%;">
     <text>模拟value animator</text>
-    <input class="btn-start" type="button" value="start" @click="startSimulation">
-    <div class="block" :style="{
-      transform: `translateX(${x}px)`
-    }"></div>
+    <input
+      class="btn-start"
+      type="button"
+      value="start"
+      @click="startSimulation"
+    />
+    <div
+      class="block"
+      :style="{
+        transform: `translateX(${x}px)`
+      }"
+    ></div>
 
     <text>animation</text>
-    <input class="btn-start" type="button" value="start" @click="startAnimate">
-    <div ref="block" class="block" :class="{animated}"></div>
+    <input
+      class="btn-start"
+      type="button"
+      value="start"
+      @click="startAnimate"
+    />
+    <div ref="block" class="block" :class="{ animated }"></div>
+
+    <text>animation-fill-mode-bug-translateX-percent</text>
+    <div class="block animated-x"></div>
+
+    <text>animation-fill-mode-bug-translateX-px</text>
+    <div class="block animated-x-px"></div>
   </div>
 </template>
 
