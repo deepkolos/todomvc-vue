@@ -5,6 +5,8 @@
   <div style="flex-direction: column; width: 100%;">
     <input type="button" value="toggle component" @click="toggle" />
     <component :is="currentComp" v-bind="components[currentComp]" />
+
+    <image src="/images/spider-man.webp"></image>
   </div>
 </template>
 
